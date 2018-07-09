@@ -32,6 +32,14 @@ class Cp_Message {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'message_custom_post' ) );
+		$this->acf_fields(); 
+	}
+
+	/**
+	 *  Load message CPT fields
+	 */
+	public function acf_fields() {
+		include COFFEEPRESS_PATH . 'acf/message-fields.php';
 	}
 
 	/**
