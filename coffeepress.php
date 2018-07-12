@@ -18,7 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'COFFEEPRESS_PATH', plugin_dir_path( __FILE__ ) );
 
+require_once COFFEEPRESS_PATH . 'inc/class-cp-helper.php';
 require_once COFFEEPRESS_PATH . 'inc/class-cp-message.php';
+
 
 /**
  * Test if the ACF plugin is active.
