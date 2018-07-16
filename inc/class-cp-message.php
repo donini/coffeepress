@@ -68,9 +68,9 @@ class Cp_Message extends Cp_Helper {
 	public function get_message() {
 		return get_posts(
 			array(
-				'nunberposts' => 1,
-				'orderby'     => 'DESC',
-				'order'       => 'menu_order',
+				'numberposts' => 1,
+				'orderby'     => 'menu_order',
+				'order'       => 'DESC',
 				'post_type'   => 'message',
 				'post_status' => 'publish',
 			)
@@ -81,13 +81,12 @@ class Cp_Message extends Cp_Helper {
 	 * Insert message at the header
 	 */
 	public function insert_message() {
-		$messsage = $this->get_message();
-		$agreed = $this->get_param( 'agreed', null );
+		$message = $this->get_message();
+		$agreed  = $this->get_param( 'agreed', null );
 		$post_id = $this->get_param( 'post_id', null );
-
 		if ( empty( $agreed ) ) {
-			if ( is_array( $messsage ) ) {
-				$current = $messsage[0];
+			if ( is_array( $message ) ) {
+				$current = $message[0];
 			}
 			if ( ! empty( $current ) ) {
 				$message_content          = $current->post_content;
@@ -106,9 +105,10 @@ class Cp_Message extends Cp_Helper {
 								esc_attr( $message_text_color ),
 								esc_attr( $message_text_padding )
 							);
+							die;
 						}
 					}
-				} else if ( 'all_pages' === $message_show_where ) {
+				} elseif ( 'all_pages' === $message_show_where ) {
 					echo $this->print_message(
 						$message_content,
 						esc_attr( $message_background_color ),
@@ -118,6 +118,7 @@ class Cp_Message extends Cp_Helper {
 				}
 			}
 		}
+		die;
 	}
 
 	/**
