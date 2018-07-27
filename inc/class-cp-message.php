@@ -32,9 +32,23 @@ class Cp_Message extends Cp_Helper {
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'message_custom_post' ) );
+		add_filter( 'body_class', array( $this, 'add_page_id' ) );
 		add_action( 'wp_ajax_insert_message', array( $this, 'insert_message' ) );
 		add_action( 'wp_ajax_nopriv_insert_message', array( $this, 'insert_message' ) );
 		$this->acf_fields();
+	}
+
+	/**
+	 * Add the page id into the class attribute
+	 *
+	 * @param string $classes get the current classes of the body element.
+	 */
+	public function add_page_id( $classes ) {
+		global $post;
+		if ( is_array( $classes ) ) {
+			$classes[] = 'page-id-' . $post->ID;
+		}
+		return $classes;
 	}
 
 	/**

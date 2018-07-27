@@ -32,4 +32,14 @@ function activation_check() {
 	}
 }
 
+/**
+ * Load the plugins assets.
+ */
+function load_assets() {
+	wp_enqueue_script( 'cp-js-message', plugin_dir_url( __FILE__ ) . 'assets/js/message.js', array( 'jquery' ), true, true );
+
+	wp_enqueue_style( 'cp-css-message', plugin_dir_url( __FILE__ ) . 'assets/css/message.css' );
+}
+
 register_activation_hook( __FILE__, 'activation_check' );
+add_action( 'wp_enqueue_scripts', 'load_assets' );

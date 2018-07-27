@@ -33,7 +33,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'key' => 'field_5b3a679a0816f',
                 'label' => 'What Page?',
                 'name' => 'what_page',
-                'type' => 'page_link',
+                'type' => 'post_object',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => array(
@@ -55,8 +55,9 @@ if( function_exists('acf_add_local_field_group') ):
                 'taxonomy' => array(
                 ),
                 'allow_null' => 0,
-                'allow_archives' => 1,
                 'multiple' => 0,
+                'return_format' => 'id',
+                'ui' => 1,
             ),
             array(
                 'key' => 'field_5b3a67d008170',

@@ -1,0 +1,12 @@
+.message.alert {
+	position: relative;
+	width: 100%;
+}
+
+.message.alert .text {
+	display: inline;
+}
+
+.message.alert .btn-close {
+	float: right;
+}
