@@ -20,6 +20,7 @@ define( 'COFFEEPRESS_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once COFFEEPRESS_PATH . 'inc/class-cp-helper.php';
 require_once COFFEEPRESS_PATH . 'inc/class-cp-message.php';
+require_once COFFEEPRESS_PATH . 'inc/class-cp-bulk-action.php';
 
 
 /**

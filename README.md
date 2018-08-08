@@ -2,7 +2,10 @@
 General propose related to the features implemented in the channel lessons
 
 ## Features
-- Message system
+1.0
+- [Message system using the ACF](https://www.youtube.com/playlist?list=PLoGR11_Q_6nbMcUYZU-_Sl3ukDzjboFzC)
+1.1
+- [Handling Bulk Actions in the dropdown lists]()
 
 ## Plugin structue
 
@@ -14,6 +17,7 @@ General propose related to the features implemented in the channel lessons
 |   |-- js
 |   |   |-- message.js
 |-- inc
+|   |-- class-cp-bulk-action.php
 |   |-- class-cp-helper.php
 |   |-- class-cp-message.php
 |-- tpl
