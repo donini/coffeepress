@@ -9,6 +9,7 @@ General propose related to the features implemented in the channel lessons
 
 ## Plugin structue
 
+```
 |-- acf
 |   +-- message-fields.php
 |-- assets
@@ -23,3 +24,4 @@ General propose related to the features implemented in the channel lessons
 |-- tpl
 |   |-- template-message.php
 |-- coffeepress.php
+```
