@@ -4,8 +4,9 @@ General propose related to the features implemented in the channel lessons
 ## Features
 1.0
 - [Message system using the ACF](https://www.youtube.com/playlist?list=PLoGR11_Q_6nbMcUYZU-_Sl3ukDzjboFzC)
+
 1.1
-- [Handling Bulk Actions in the dropdown lists]()
+- [Handling Bulk Actions in the dropdown lists](https://youtu.be/idvLjXUq-UA)
 
 ## Plugin structue
 
