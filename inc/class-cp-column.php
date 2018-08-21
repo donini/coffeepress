@@ -42,6 +42,9 @@ class Cp_Column {
 
 		add_filter( 'manage_message_posts_columns', array( $this, 'add_message_column' ) );
 		add_action( 'manage_message_posts_custom_column', array( $this, 'add_message_column_content' ), 10, 2 );
+
+		add_filter( 'manage_edit-message_sortable_columns', array( $this, 'sortable_message_column' ) );
+		add_action( 'pre_get_posts', array( $this, 'message_orderby' ) );
 	}
 
 	/**
@@ -104,6 +107,36 @@ class Cp_Column {
 					);
 					break;
 			}
+		}
+	}
+
+	/**
+	 * Add the custom column to the sortable list of columns.
+	 *
+	 * @param array $columns current list columns in the sortable list.
+	 */
+	public function sortable_message_column( $columns ) {
+		$columns['show_where'] = 'show_where';
+
+		return $columns;
+	}
+
+	/**
+	 * Add to the query the custom sortable field.
+	 *
+	 * @param object $query query object of the list.
+	 */
+	public function message_orderby( $query ) {
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		$orderby = $query->get( 'orderby' );
+
+		if ( 'show_where' === $orderby ) {
+
+			$query->set( 'meta_key', 'show_where' );
+			$query->set( 'orderby', 'meta_value' );
 		}
 	}
 }
