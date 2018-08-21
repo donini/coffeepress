@@ -24,6 +24,7 @@ General propose related to the features implemented in the channel lessons
 |   |   |-- message.js
 |-- inc
 |   |-- class-cp-bulk-action.php
+|   |-- class-cp-column.php
 |   |-- class-cp-helper.php
 |   |-- class-cp-message.php
 |-- tpl
